@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1032459964939",
+    "project_id": "prats-flutter-app",
+    "storage_bucket": "prats-flutter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032459964939:android:d67f8196fdcf1e9aaaad0e",
+        "android_client_info": {
+          "package_name": "com.mynotes.mynotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuMwqCKwqfH4tdUUQdrS0Zmovt3x4WVwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
