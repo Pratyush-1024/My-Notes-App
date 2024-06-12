@@ -18,6 +18,21 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
   late final FirebaseCloudStorage _notesService;
   late final TextEditingController _textEditingController;
 
+  @override
+  void initState() {
+    _notesService = FirebaseCloudStorage();
+    _textEditingController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _deleteNodeIfTextIsEmpty();
+    _saveNoteIdTextIsNotEmpty();
+    _textEditingController.dispose();
+    super.dispose();
+  }
+
   Future<CloudNote> createOrGetExistingNote(BuildContext context) async {
     final widgetNote = context.getArgument<CloudNote>();
 
@@ -73,21 +88,6 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
   void _setUpTextControllerListener() {
     _textEditingController.removeListener(_textControllerListener);
     _textEditingController.addListener(_textControllerListener);
-  }
-
-  @override
-  void initState() {
-    _notesService = FirebaseCloudStorage();
-    _textEditingController = TextEditingController();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _deleteNodeIfTextIsEmpty();
-    _saveNoteIdTextIsNotEmpty();
-    _textEditingController.dispose();
-    super.dispose();
   }
 
   @override
